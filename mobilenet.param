@@ -1,0 +1,112 @@
+111 111
+Input            input            0 1 data 3 224 224
+Convolution      conv1            1 1 data conv1 32 3 1 2 1 0 864
+BatchNorm        conv1/bn         1 1 conv1 conv1_conv1/bn 32
+Scale            conv1/scale      1 1 conv1_conv1/bn conv1_conv1/scale 32 1
+ReLU             relu1            1 1 conv1_conv1/scale conv1_relu1 0.000000
+ConvolutionDepthWise conv2_1/dw       1 1 conv1_relu1 conv2_1/dw 32 3 1 1 1 0 288 32
+BatchNorm        conv2_1/dw/bn    1 1 conv2_1/dw conv2_1/dw_conv2_1/dw/bn 32
+Scale            conv2_1/dw/scale 1 1 conv2_1/dw_conv2_1/dw/bn conv2_1/dw_conv2_1/dw/scale 32 1
+ReLU             relu2_1/dw       1 1 conv2_1/dw_conv2_1/dw/scale conv2_1/dw_relu2_1/dw 0.000000
+Convolution      conv2_1/sep      1 1 conv2_1/dw_relu2_1/dw conv2_1/sep 64 1 1 1 0 0 2048
+BatchNorm        conv2_1/sep/bn   1 1 conv2_1/sep conv2_1/sep_conv2_1/sep/bn 64
+Scale            conv2_1/sep/scale 1 1 conv2_1/sep_conv2_1/sep/bn conv2_1/sep_conv2_1/sep/scale 64 1
+ReLU             relu2_1/sep      1 1 conv2_1/sep_conv2_1/sep/scale conv2_1/sep_relu2_1/sep 0.000000
+ConvolutionDepthWise conv2_2/dw       1 1 conv2_1/sep_relu2_1/sep conv2_2/dw 64 3 1 2 1 0 576 64
+BatchNorm        conv2_2/dw/bn    1 1 conv2_2/dw conv2_2/dw_conv2_2/dw/bn 64
+Scale            conv2_2/dw/scale 1 1 conv2_2/dw_conv2_2/dw/bn conv2_2/dw_conv2_2/dw/scale 64 1
+ReLU             relu2_2/dw       1 1 conv2_2/dw_conv2_2/dw/scale conv2_2/dw_relu2_2/dw 0.000000
+Convolution      conv2_2/sep      1 1 conv2_2/dw_relu2_2/dw conv2_2/sep 128 1 1 1 0 0 8192
+BatchNorm        conv2_2/sep/bn   1 1 conv2_2/sep conv2_2/sep_conv2_2/sep/bn 128
+Scale            conv2_2/sep/scale 1 1 conv2_2/sep_conv2_2/sep/bn conv2_2/sep_conv2_2/sep/scale 128 1
+ReLU             relu2_2/sep      1 1 conv2_2/sep_conv2_2/sep/scale conv2_2/sep_relu2_2/sep 0.000000
+ConvolutionDepthWise conv3_1/dw       1 1 conv2_2/sep_relu2_2/sep conv3_1/dw 128 3 1 1 1 0 1152 128
+BatchNorm        conv3_1/dw/bn    1 1 conv3_1/dw conv3_1/dw_conv3_1/dw/bn 128
+Scale            conv3_1/dw/scale 1 1 conv3_1/dw_conv3_1/dw/bn conv3_1/dw_conv3_1/dw/scale 128 1
+ReLU             relu3_1/dw       1 1 conv3_1/dw_conv3_1/dw/scale conv3_1/dw_relu3_1/dw 0.000000
+Convolution      conv3_1/sep      1 1 conv3_1/dw_relu3_1/dw conv3_1/sep 128 1 1 1 0 0 16384
+BatchNorm        conv3_1/sep/bn   1 1 conv3_1/sep conv3_1/sep_conv3_1/sep/bn 128
+Scale            conv3_1/sep/scale 1 1 conv3_1/sep_conv3_1/sep/bn conv3_1/sep_conv3_1/sep/scale 128 1
+ReLU             relu3_1/sep      1 1 conv3_1/sep_conv3_1/sep/scale conv3_1/sep_relu3_1/sep 0.000000
+ConvolutionDepthWise conv3_2/dw       1 1 conv3_1/sep_relu3_1/sep conv3_2/dw 128 3 1 2 1 0 1152 128
+BatchNorm        conv3_2/dw/bn    1 1 conv3_2/dw conv3_2/dw_conv3_2/dw/bn 128
+Scale            conv3_2/dw/scale 1 1 conv3_2/dw_conv3_2/dw/bn conv3_2/dw_conv3_2/dw/scale 128 1
+ReLU             relu3_2/dw       1 1 conv3_2/dw_conv3_2/dw/scale conv3_2/dw_relu3_2/dw 0.000000
+Convolution      conv3_2/sep      1 1 conv3_2/dw_relu3_2/dw conv3_2/sep 256 1 1 1 0 0 32768
+BatchNorm        conv3_2/sep/bn   1 1 conv3_2/sep conv3_2/sep_conv3_2/sep/bn 256
+Scale            conv3_2/sep/scale 1 1 conv3_2/sep_conv3_2/sep/bn conv3_2/sep_conv3_2/sep/scale 256 1
+ReLU             relu3_2/sep      1 1 conv3_2/sep_conv3_2/sep/scale conv3_2/sep_relu3_2/sep 0.000000
+ConvolutionDepthWise conv4_1/dw       1 1 conv3_2/sep_relu3_2/sep conv4_1/dw 256 3 1 1 1 0 2304 256
+BatchNorm        conv4_1/dw/bn    1 1 conv4_1/dw conv4_1/dw_conv4_1/dw/bn 256
+Scale            conv4_1/dw/scale 1 1 conv4_1/dw_conv4_1/dw/bn conv4_1/dw_conv4_1/dw/scale 256 1
+ReLU             relu4_1/dw       1 1 conv4_1/dw_conv4_1/dw/scale conv4_1/dw_relu4_1/dw 0.000000
+Convolution      conv4_1/sep      1 1 conv4_1/dw_relu4_1/dw conv4_1/sep 256 1 1 1 0 0 65536
+BatchNorm        conv4_1/sep/bn   1 1 conv4_1/sep conv4_1/sep_conv4_1/sep/bn 256
+Scale            conv4_1/sep/scale 1 1 conv4_1/sep_conv4_1/sep/bn conv4_1/sep_conv4_1/sep/scale 256 1
+ReLU             relu4_1/sep      1 1 conv4_1/sep_conv4_1/sep/scale conv4_1/sep_relu4_1/sep 0.000000
+ConvolutionDepthWise conv4_2/dw       1 1 conv4_1/sep_relu4_1/sep conv4_2/dw 256 3 1 2 1 0 2304 256
+BatchNorm        conv4_2/dw/bn    1 1 conv4_2/dw conv4_2/dw_conv4_2/dw/bn 256
+Scale            conv4_2/dw/scale 1 1 conv4_2/dw_conv4_2/dw/bn conv4_2/dw_conv4_2/dw/scale 256 1
+ReLU             relu4_2/dw       1 1 conv4_2/dw_conv4_2/dw/scale conv4_2/dw_relu4_2/dw 0.000000
+Convolution      conv4_2/sep      1 1 conv4_2/dw_relu4_2/dw conv4_2/sep 512 1 1 1 0 0 131072
+BatchNorm        conv4_2/sep/bn   1 1 conv4_2/sep conv4_2/sep_conv4_2/sep/bn 512
+Scale            conv4_2/sep/scale 1 1 conv4_2/sep_conv4_2/sep/bn conv4_2/sep_conv4_2/sep/scale 512 1
+ReLU             relu4_2/sep      1 1 conv4_2/sep_conv4_2/sep/scale conv4_2/sep_relu4_2/sep 0.000000
+ConvolutionDepthWise conv5_1/dw       1 1 conv4_2/sep_relu4_2/sep conv5_1/dw 512 3 1 1 1 0 4608 512
+BatchNorm        conv5_1/dw/bn    1 1 conv5_1/dw conv5_1/dw_conv5_1/dw/bn 512
+Scale            conv5_1/dw/scale 1 1 conv5_1/dw_conv5_1/dw/bn conv5_1/dw_conv5_1/dw/scale 512 1
+ReLU             relu5_1/dw       1 1 conv5_1/dw_conv5_1/dw/scale conv5_1/dw_relu5_1/dw 0.000000
+Convolution      conv5_1/sep      1 1 conv5_1/dw_relu5_1/dw conv5_1/sep 512 1 1 1 0 0 262144
+BatchNorm        conv5_1/sep/bn   1 1 conv5_1/sep conv5_1/sep_conv5_1/sep/bn 512
+Scale            conv5_1/sep/scale 1 1 conv5_1/sep_conv5_1/sep/bn conv5_1/sep_conv5_1/sep/scale 512 1
+ReLU             relu5_1/sep      1 1 conv5_1/sep_conv5_1/sep/scale conv5_1/sep_relu5_1/sep 0.000000
+ConvolutionDepthWise conv5_2/dw       1 1 conv5_1/sep_relu5_1/sep conv5_2/dw 512 3 1 1 1 0 4608 512
+BatchNorm        conv5_2/dw/bn    1 1 conv5_2/dw conv5_2/dw_conv5_2/dw/bn 512
+Scale            conv5_2/dw/scale 1 1 conv5_2/dw_conv5_2/dw/bn conv5_2/dw_conv5_2/dw/scale 512 1
+ReLU             relu5_2/dw       1 1 conv5_2/dw_conv5_2/dw/scale conv5_2/dw_relu5_2/dw 0.000000
+Convolution      conv5_2/sep      1 1 conv5_2/dw_relu5_2/dw conv5_2/sep 512 1 1 1 0 0 262144
+BatchNorm        conv5_2/sep/bn   1 1 conv5_2/sep conv5_2/sep_conv5_2/sep/bn 512
+Scale            conv5_2/sep/scale 1 1 conv5_2/sep_conv5_2/sep/bn conv5_2/sep_conv5_2/sep/scale 512 1
+ReLU             relu5_2/sep      1 1 conv5_2/sep_conv5_2/sep/scale conv5_2/sep_relu5_2/sep 0.000000
+ConvolutionDepthWise conv5_3/dw       1 1 conv5_2/sep_relu5_2/sep conv5_3/dw 512 3 1 1 1 0 4608 512
+BatchNorm        conv5_3/dw/bn    1 1 conv5_3/dw conv5_3/dw_conv5_3/dw/bn 512
+Scale            conv5_3/dw/scale 1 1 conv5_3/dw_conv5_3/dw/bn conv5_3/dw_conv5_3/dw/scale 512 1
+ReLU             relu5_3/dw       1 1 conv5_3/dw_conv5_3/dw/scale conv5_3/dw_relu5_3/dw 0.000000
+Convolution      conv5_3/sep      1 1 conv5_3/dw_relu5_3/dw conv5_3/sep 512 1 1 1 0 0 262144
+BatchNorm        conv5_3/sep/bn   1 1 conv5_3/sep conv5_3/sep_conv5_3/sep/bn 512
+Scale            conv5_3/sep/scale 1 1 conv5_3/sep_conv5_3/sep/bn conv5_3/sep_conv5_3/sep/scale 512 1
+ReLU             relu5_3/sep      1 1 conv5_3/sep_conv5_3/sep/scale conv5_3/sep_relu5_3/sep 0.000000
+ConvolutionDepthWise conv5_4/dw       1 1 conv5_3/sep_relu5_3/sep conv5_4/dw 512 3 1 1 1 0 4608 512
+BatchNorm        conv5_4/dw/bn    1 1 conv5_4/dw conv5_4/dw_conv5_4/dw/bn 512
+Scale            conv5_4/dw/scale 1 1 conv5_4/dw_conv5_4/dw/bn conv5_4/dw_conv5_4/dw/scale 512 1
+ReLU             relu5_4/dw       1 1 conv5_4/dw_conv5_4/dw/scale conv5_4/dw_relu5_4/dw 0.000000
+Convolution      conv5_4/sep      1 1 conv5_4/dw_relu5_4/dw conv5_4/sep 512 1 1 1 0 0 262144
+BatchNorm        conv5_4/sep/bn   1 1 conv5_4/sep conv5_4/sep_conv5_4/sep/bn 512
+Scale            conv5_4/sep/scale 1 1 conv5_4/sep_conv5_4/sep/bn conv5_4/sep_conv5_4/sep/scale 512 1
+ReLU             relu5_4/sep      1 1 conv5_4/sep_conv5_4/sep/scale conv5_4/sep_relu5_4/sep 0.000000
+ConvolutionDepthWise conv5_5/dw       1 1 conv5_4/sep_relu5_4/sep conv5_5/dw 512 3 1 1 1 0 4608 512
+BatchNorm        conv5_5/dw/bn    1 1 conv5_5/dw conv5_5/dw_conv5_5/dw/bn 512
+Scale            conv5_5/dw/scale 1 1 conv5_5/dw_conv5_5/dw/bn conv5_5/dw_conv5_5/dw/scale 512 1
+ReLU             relu5_5/dw       1 1 conv5_5/dw_conv5_5/dw/scale conv5_5/dw_relu5_5/dw 0.000000
+Convolution      conv5_5/sep      1 1 conv5_5/dw_relu5_5/dw conv5_5/sep 512 1 1 1 0 0 262144
+BatchNorm        conv5_5/sep/bn   1 1 conv5_5/sep conv5_5/sep_conv5_5/sep/bn 512
+Scale            conv5_5/sep/scale 1 1 conv5_5/sep_conv5_5/sep/bn conv5_5/sep_conv5_5/sep/scale 512 1
+ReLU             relu5_5/sep      1 1 conv5_5/sep_conv5_5/sep/scale conv5_5/sep_relu5_5/sep 0.000000
+ConvolutionDepthWise conv5_6/dw       1 1 conv5_5/sep_relu5_5/sep conv5_6/dw 512 3 1 2 1 0 4608 512
+BatchNorm        conv5_6/dw/bn    1 1 conv5_6/dw conv5_6/dw_conv5_6/dw/bn 512
+Scale            conv5_6/dw/scale 1 1 conv5_6/dw_conv5_6/dw/bn conv5_6/dw_conv5_6/dw/scale 512 1
+ReLU             relu5_6/dw       1 1 conv5_6/dw_conv5_6/dw/scale conv5_6/dw_relu5_6/dw 0.000000
+Convolution      conv5_6/sep      1 1 conv5_6/dw_relu5_6/dw conv5_6/sep 1024 1 1 1 0 0 524288
+BatchNorm        conv5_6/sep/bn   1 1 conv5_6/sep conv5_6/sep_conv5_6/sep/bn 1024
+Scale            conv5_6/sep/scale 1 1 conv5_6/sep_conv5_6/sep/bn conv5_6/sep_conv5_6/sep/scale 1024 1
+ReLU             relu5_6/sep      1 1 conv5_6/sep_conv5_6/sep/scale conv5_6/sep_relu5_6/sep 0.000000
+ConvolutionDepthWise conv6/dw         1 1 conv5_6/sep_relu5_6/sep conv6/dw 1024 3 1 1 1 0 9216 1024
+BatchNorm        conv6/dw/bn      1 1 conv6/dw conv6/dw_conv6/dw/bn 1024
+Scale            conv6/dw/scale   1 1 conv6/dw_conv6/dw/bn conv6/dw_conv6/dw/scale 1024 1
+ReLU             relu6/dw         1 1 conv6/dw_conv6/dw/scale conv6/dw_relu6/dw 0.000000
+Convolution      conv6/sep        1 1 conv6/dw_relu6/dw conv6/sep 1024 1 1 1 0 0 1048576
+BatchNorm        conv6/sep/bn     1 1 conv6/sep conv6/sep_conv6/sep/bn 1024
+Scale            conv6/sep/scale  1 1 conv6/sep_conv6/sep/bn conv6/sep_conv6/sep/scale 1024 1
+ReLU             relu6/sep        1 1 conv6/sep_conv6/sep/scale conv6/sep_relu6/sep 0.000000
+Pooling          pool6            1 1 conv6/sep_relu6/sep pool6 1 0 1 0 1
+Convolution      fc7              1 1 pool6 fc7 1000 1 1 1 0 1 1024000
